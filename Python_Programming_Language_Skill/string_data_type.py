@@ -62,3 +62,40 @@ print("abc123".isalnum())  # True
 # Returns the first index of a substring. Returns ValueError if not found.
 print("python".index("ho"))  # 3
 # print("python".index("ma"))  # ValueError: substring not found
+
+# Given input
+# name = "  mahendhar  "
+# email = "Mahendhar@Gmail.COM"
+# age = "25"
+# bio = "i am a python developer. i love ai and web."
+# skills = "python, ai, devops, python"
+#  Tasks You’d Perform (using string methods):
+#  Clean up name with strip() and capitalize it
+#  Make email lowercase using lower()
+#  Check if email ends with "@gmail.com" using endswith()
+#  Validate that age is a number using isdigit()
+#  Capitalize the bio properly using capitalize() or title()
+#  Split skills using split(",")
+#  Remove duplicates by converting to set, then join again
+#  Count how many times “python” appears using count()
+#  Check if name is alphabet using isalpha()
+
+def data_validate(name, email, age, bio, skills):
+    print('Clean Name:', name.capitalize().strip())
+    email=email.lower()
+    if email.endswith('@gmail.com'):
+        print('Email:', email, '(valid Gmail)')
+    if age.isdigit():
+        print(age, '(valid)')
+    print('Formatted Bio:', bio.title())
+    Skills1= (skills.split(', '))
+    Skills = set(Skills1)
+    print('Skills:', ', '.join(Skills) )
+    print("'python' mentioned ", Skills1.count('python'), "times in skills." )
+
+name = "  mahendhar  "
+email = "Mahendhar@Gmail.COM"
+age = "25"
+bio = "i am a python developer. i love ai and web."
+skills = "python, ai, devops, python"
+data_validate(name, email, age, bio, skills)
