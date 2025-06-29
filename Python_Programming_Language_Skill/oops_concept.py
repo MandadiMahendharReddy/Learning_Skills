@@ -58,3 +58,42 @@ print(Student.portal_type())
 
 # Static method (Platform rule - same for all users)
 print(User.platform_policy())
+
+
+print("================================Challenge OOPS=======================================")
+
+# 💸 OOP Challenge: Personal Finance Tracker (Income + Expenditure with Categories)
+
+# 🔒 1. Abstraction:
+# - Create an abstract class `Transaction` with:
+#   - Private attributes: __amount, __description
+#   - Abstract method: get_summary()
+#   - Concrete method: get_amount() to return amount
+
+# 🔐 2. Encapsulation:
+# - Protect amount and description with __
+# - Provide public getter methods for each
+
+# 👨‍👩‍👧‍👦 3. Inheritance & 🔁 4. Polymorphism:
+# - Create two child classes:
+#   1. `Income`: overrides get_summary() to print: "Income: ₹amount from [desc]"
+#   2. `Expense`: overrides get_summary() to print: "Spent ₹amount on [desc]"
+
+# - Also, add categories to Expense like "Food", "Bills", "Travel", etc.
+
+# 🧪 Test Code:
+# - Create a list of transactions: some Income, some Expense
+# - Print all transaction summaries
+# - Calculate total income, total expenses, and balance
+# - Show category-wise expense summary (optional bonus)
+
+# Expected Output
+# Income: ₹15000 from Freelancing
+# Spent ₹500 on Food
+# Spent ₹1000 on Bills
+# Spent ₹2000 on Travel
+# Total Income: ₹15000
+# Total Expenses: ₹3500
+# Balance: ₹11500
+
+
