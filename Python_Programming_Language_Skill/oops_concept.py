@@ -62,26 +62,26 @@ print(User.platform_policy())
 
 print("================================Challenge OOPS=======================================")
 
-# 💸 OOP Challenge: Personal Finance Tracker (Income + Expenditure with Categories)
+# OOP Challenge: Personal Finance Tracker (Income + Expenditure with Categories)
 
-# 🔒 1. Abstraction:
+# 1. Abstraction:
 # - Create an abstract class `Transaction` with:
 #   - Private attributes: __amount, __description
 #   - Abstract method: get_summary()
 #   - Concrete method: get_amount() to return amount
 
-# 🔐 2. Encapsulation:
+# 2. Encapsulation:
 # - Protect amount and description with __
 # - Provide public getter methods for each
 
-# 👨‍👩‍👧‍👦 3. Inheritance & 🔁 4. Polymorphism:
+# 3. Inheritance &  4. Polymorphism:
 # - Create two child classes:
 #   1. `Income`: overrides get_summary() to print: "Income: ₹amount from [desc]"
 #   2. `Expense`: overrides get_summary() to print: "Spent ₹amount on [desc]"
 
 # - Also, add categories to Expense like "Food", "Bills", "Travel", etc.
 
-# 🧪 Test Code:
+# Test Code:
 # - Create a list of transactions: some Income, some Expense
 # - Print all transaction summaries
 # - Calculate total income, total expenses, and balance
@@ -99,10 +99,10 @@ print("================================Challenge OOPS===========================
 
 from abc import ABC, abstractmethod
 
-# 🔒 Abstraction: Base class that hides internal logic and defines common structure
+# Abstraction: Base class that hides internal logic and defines common structure
 class Transaction(ABC):
     def __init__(self, amount, description):
-        self.__amount = amount  # 🔐 Encapsulated (private) attribute
+        self.__amount = amount  # Encapsulated (private) attribute
         self.__description = description
 
     def get_amount(self):
@@ -116,7 +116,7 @@ class Transaction(ABC):
         pass  # Abstract method to be defined differently by child classes
 
 
-# 👨‍🏫 Inheritance + 🔁 Polymorphism
+# Inheritance + Polymorphism
 class Income(Transaction):
     def get_summary(self):
         return f"Income: ₹{self.get_amount()} from {self.get_description()}"
@@ -134,7 +134,7 @@ class Expense(Transaction):
         return f"Spent ₹{self.get_amount()} on {self.get_description()} [{self.get_category()}]"
 
 
-# 🧪 Test Code Starts Here
+# Test Code Starts Here
 
 # Create sample transactions
 transactions = [
@@ -148,22 +148,22 @@ transactions = [
 ]
 
 # Print all transaction summaries
-print("📄 All Transactions:\n")
+print("All Transactions:\n")
 for t in transactions:
     print(t.get_summary())
 
-# 💰 Calculate totals
+# Calculate totals
 total_income = sum(t.get_amount() for t in transactions if isinstance(t, Income))
 total_expense = sum(t.get_amount() for t in transactions if isinstance(t, Expense))
 balance = total_income - total_expense
 
-print("\n💹 Summary:")
+print("\nSummary:")
 print("Total Income: ₹", total_income)
 print("Total Expenses: ₹", total_expense)
 print("Remaining Balance: ₹", balance)
 
-# 📊 Bonus: Category-wise expense summary
-print("\n📊 Category-wise Expense Breakdown:")
+# Bonus: Category-wise expense summary
+print("\nCategory-wise Expense Breakdown:")
 category_summary = {}
 for t in transactions:
     if isinstance(t, Expense):
@@ -173,7 +173,7 @@ for t in transactions:
 for cat, amt in category_summary.items():
     print(f"- {cat}: ₹{amt}")
 
-# 📄 All Transactions:
+# All Transactions:
 #
 # Income: ₹15000 from Freelance Project
 # Spent ₹500 on Lunch [Food]
@@ -182,12 +182,12 @@ for cat, amt in category_summary.items():
 # Income: ₹5000 from Bonus
 # Spent ₹1500 on Groceries [Food]
 #
-# 💹 Summary:
+# Summary:
 # Total Income: ₹ 20000
 # Total Expenses: ₹ 5000
 # Remaining Balance: ₹ 15000
 #
-# 📊 Category-wise Expense Breakdown:
+# Category-wise Expense Breakdown:
 # - Food: ₹2000
 # - Utilities: ₹1000
 # - Travel: ₹2000
