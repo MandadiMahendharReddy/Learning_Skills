@@ -98,3 +98,10 @@ original[0][0] = 99
 print('original', original)
 print('shallow', shallow)
 print('deep', deep)
+
+# original [[1, 2], [3, 4]]
+# shallow [[1, 2], [3, 4]]
+# deep [[1, 2], [3, 4]]
+# original [[99, 2], [3, 4]]
+# shallow [[99, 2], [3, 4]]
+# deep [[1, 2], [3, 4]]
