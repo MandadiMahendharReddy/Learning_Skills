@@ -1,13 +1,13 @@
 import requests
 
 # URL of the webpage you want to download
-url = "https://quotes.toscrape.com/js/"
+url = "https://www.google.com/?client=safari&channel=mac_bm"
 
 # Send GET request to the website
 response = requests.get(url)
 
 # Save the HTML content to a file
-with open("downloaded_page1.html", "w", encoding='utf-8') as file:
+with open("downloaded_page2.html", "w", encoding='utf-8') as file:
     file.write(response.text)
 
 print("Page downloaded successfully!")
@@ -15,7 +15,7 @@ print("Page downloaded successfully!")
 # Beautiful soup
 import requests
 from bs4 import BeautifulSoup
-url = "https://quotes.toscrape.com/"
+url = "https://www.google.com/?client=safari&channel=mac_bm"
 response = requests.get(url)
 print('response', response)
 soup = BeautifulSoup(response.text, 'html.parser')

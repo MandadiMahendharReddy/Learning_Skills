@@ -37,7 +37,7 @@ with open('example.txt', 'a') as f:
     f.write('New log line\n')
 
 # Open file for read and write
-# with open('file.txt', 'r+') as f: # file.txt must exist
+# with open('file.txt', 'r+') as f: # file.txt must exist, error getting
 #     content = f.read()
 #     f.write('\nExtra line')
 
@@ -166,6 +166,7 @@ print(content)
 with open('passport.jpg', 'rb') as source:
     # Read the entire file contents as bytes into the variable img_data
     img_data = source.read()
+    print(img_data)
 
 # Open the destination file in binary write mode ('wb')
 with open('copy_passport.jpg', 'wb') as dest:

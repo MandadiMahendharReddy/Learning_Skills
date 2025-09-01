@@ -36,6 +36,13 @@ except Exception as e:
 
 print("===========================Real Time Example===============================")
 
+# Accepts user input (e.g., withdrawal amount),
+# Handles invalid data,
+# Performs division (for EMI logic),
+# Manages files (like transaction logs),
+# Cleans up after actions (finally block).
+
+
 def withdraw_money(balance):
     try:
         # 1. Input amount from user

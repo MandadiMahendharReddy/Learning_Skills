@@ -42,9 +42,9 @@ for i in range(10):
     print(i)
 
 # continue: Skips the current iteration and continues with the next one.
-for i in range(5):
+for i in range(10):
     if i == 3:
-        continue  # Skips the rest of the loop when i is 3
+        continue  # Skips only 3 and continue
     print(i)
 
 # pass: Does nothing; serves as a placeholder.

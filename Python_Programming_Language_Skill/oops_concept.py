@@ -191,3 +191,68 @@ for cat, amt in category_summary.items():
 # - Food: ₹2000
 # - Utilities: ₹1000
 # - Travel: ₹2000
+
+# 🔒 CHALLENGE: Online Course Platform System
+# 📌 REQUIREMENTS:
+# 1. Create an abstract base class `Course` using ABC module
+#    - Define abstract method: course_info()
+
+# 2. Create two child classes `FreeCourse` and `PaidCourse` that inherit from `Course`
+#    - Each should override course_info() and display different messages
+
+# 3. Add encapsulation:
+#    - Make course name and instructor private
+#    - Provide methods to get/set them properly
+
+# 4. Create a method enroll() in both child classes, but with different behavior (Polymorphism)
+#    - FreeCourse: prints "Enrolled successfully, no payment needed!"
+#    - PaidCourse: prints "Enrolled successfully after payment!"
+
+# 5. Create objects of both classes and test:
+#    - course_info()
+#    - enroll()
+#    - getting/setting course name using encapsulated method
+
+# 💡 Example Output:
+# Course: Python Basics by John
+# Enrolled successfully, no payment needed!
+
+# Course: Data Science Pro by Alice
+# Enrolled successfully after payment!
+
+from abc import ABC, abstractmethod
+# Abstract Base Class
+class Courses(ABC):
+    def __init__(self, course, instructor):
+        # Encapsulated attributes
+        self.__course = course
+        self.__instructor = instructor
+    # Getters to access private attributes
+    def get_course(self):
+        return self.__course
+    def get_instructor(self):
+        return self.__instructor
+    # Abstract method - must be implemented by subclasses
+    @abstractmethod
+    def course_info(self):
+        pass
+# Subclass for free courses
+class FreeCourse(Courses):
+    def course_info(self):
+        return f"Course: {self.get_course()} by {self.get_instructor()}"
+    def enroll(self):
+        return "Enrolled successfully, no payment needed!"
+# Subclass for paid courses
+class PaidCourse(Courses):
+    def course_info(self):
+        return f"Course: {self.get_course()} by {self.get_instructor()}"
+    def enroll(self):
+        return "Enrolled successfully after payment!"
+# Creating objects
+f = FreeCourse(course='Python Basics', instructor='Mahendhar')
+p = PaidCourse(course='Django', instructor='Amar')
+# Displaying course info and enrollment status
+print(f.course_info())
+print(f.enroll())
+print(p.course_info())
+print(p.enroll())

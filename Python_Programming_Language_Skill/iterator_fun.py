@@ -15,12 +15,15 @@ for line in file_iterator:
 
 class Countdown:
     def __init__(self, start):
+        print('start:', start)
         self.num = start
 
     def __iter__(self):
+        print('self:', self)
         return self
 
     def __next__(self):
+        print('num:', self.num)
         if self.num <= 0:
             raise StopIteration
         current = self.num

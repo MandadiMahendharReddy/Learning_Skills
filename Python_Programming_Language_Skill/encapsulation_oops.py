@@ -24,4 +24,5 @@ account = BankAccount("Mahendhar", 1000)
 print(account.deposit(500))  # ✅ Safe deposit
 print(account.withdraw(300))  # ✅ Safe withdrawal
 print(account.get_balance())  # ✅ Access via method
-#print(account.__balance)  # ❌ Will raise error: attribute is private
+print(account.owner) # accessed public
+#print(account.owner)  # ❌ Will raise error: attribute is private
