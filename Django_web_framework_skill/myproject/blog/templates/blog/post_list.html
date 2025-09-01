@@ -10,9 +10,12 @@
             <li>
                 <a href="{{ post.id }}/">{{ post.title }}</a>
                 <p>{{ post.content|truncatewords:20 }}</p>
-                <small>Posted on {{ post.created_at }}</small>
+                <small>By {{ post.author }} | {{ post.created_at }}</small>
             </li>
+        {% empty %}
+            <li>No posts available.</li>
         {% endfor %}
     </ul>
 </body>
 </html>
+

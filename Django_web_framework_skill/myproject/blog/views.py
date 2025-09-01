@@ -1,11 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Post
 
 def post_list(request):
-    posts = Post.objects.all().order_by('-created_at')  # latest first
+    posts = Post.objects.all().order_by('-created_at')  # fetch from DB
     return render(request, 'blog/post_list.html', {'posts': posts})
 
 def post_detail(request, post_id):
-    post = Post.objects.get(id=post_id)
+    post = get_object_or_404(Post, id=post_id)  # safe lookup
     return render(request, 'blog/post_detail.html', {'post': post})
 
