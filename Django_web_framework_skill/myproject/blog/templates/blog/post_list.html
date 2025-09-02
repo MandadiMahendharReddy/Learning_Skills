@@ -1,21 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>My Blog</title>
-</head>
-<body>
-    <h1>Blog Posts</h1>
-    <ul>
-        {% for post in posts %}
-            <li>
-                <a href="{{ post.id }}/">{{ post.title }}</a>
-                <p>{{ post.content|truncatewords:20 }}</p>
-                <small>By {{ post.author }} | {{ post.created_at }}</small>
-            </li>
-        {% empty %}
-            <li>No posts available.</li>
-        {% endfor %}
-    </ul>
-</body>
-</html>
+{% extends "blog/base.html" %}
+{% block content %}
+  <h2>All Posts</h2>
+  <ul>
+    {% for post in posts %}
+      <li><a href="{% url 'post_detail' post.id %}">{{ post.title }}</a> by {{ post.author }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
 
