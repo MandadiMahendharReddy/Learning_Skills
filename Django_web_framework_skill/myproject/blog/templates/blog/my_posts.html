@@ -1,0 +1,15 @@
+{% extends "blog/base.html" %}
+{% block content %}
+  <h2>My Posts</h2>
+  <ul>
+    {% for post in posts %}
+      <li>
+        <a href="{% url 'post_detail' post.id %}">{{ post.title }}</a>
+        <a href="{% url 'update_post' post.id %}" class="btn btn-sm btn-warning">Edit</a>
+        <a href="{% url 'delete_post' post.id %}" class="btn btn-sm btn-danger">Delete</a>
+      </li>
+    {% empty %}
+      <p>You haven’t created any posts yet.</p>
+    {% endfor %}
+  </ul>
+{% endblock %}
