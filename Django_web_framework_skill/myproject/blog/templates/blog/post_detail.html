@@ -1,0 +1,20 @@
+<h1>{{ post.title }}</h1>
+<p>{{ post.content }}</p>
+<hr>
+
+<h3>Comments</h3>
+{% for comment in comments %}
+    <p><b>{{ comment.author }}</b>: {{ comment.text }}</p>
+    <small>{{ comment.created_at }}</small>
+    <hr>
+{% empty %}
+    <p>No comments yet. Be the first!</p>
+{% endfor %}
+
+<h3>Add a Comment</h3>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Post Comment</button>
+</form>
+<a href="/">Back to posts</a>

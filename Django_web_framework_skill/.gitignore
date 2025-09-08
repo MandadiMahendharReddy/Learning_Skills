@@ -1,0 +1,64 @@
+# Django-specific
+*.log
+*.pot
+*.pyc
+__pycache__/
+myproject/db.sqlite3
+media/
+
+# Python
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.env
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDEs and editors
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Coverage and testing
+.coverage
+.coverage.*
+.cache
+.pytest_cache/
+htmlcov/
+.tox/
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+
+# Packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+*.egg
+*.whl
+
+# Jupyter notebooks
+.ipynb_checkpoints
+
+# Celery
+celerybeat-schedule.*
+
+# Local settings
+local_settings.py
+
+# Static and backup files
+*.bak
+*.tmp
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
